@@ -1,0 +1,27 @@
+<head>
+ <meta charset=UTF-8>
+ <meta name=viewport content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+ <title>藍子かわいい</title>
+</head>
+
+<body>
+ <div>{{> main}}</div>
+</body>
+
+<template name="main">
+ {{#each messages}}
+  {{> message}}
+ {{/each}}
+ <div id=buttons>
+  <button id=add>押す</button>
+  {{#if manyMessages}}
+  <br><button id=reset>全部消す</button>
+  {{/if}}
+ </div>
+</template>
+
+<template name="message">
+ <div class=message style="left:{{x}}%; top:{{y}}%; font-size:{{size}}%">
+  {{text}}
+ </div>
+</template>
