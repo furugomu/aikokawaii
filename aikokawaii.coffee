@@ -4,9 +4,12 @@ if Meteor.is_client
   Meteor.subscribe "messages"
 
   Template.main.events =
-    'click #add': ->
+    'submit': (e)->
+      e.preventDefault()
+      name = e.target.elements["name"].value.replace(/^\s+|\s+$/g, "")
+      return if name == ""
       Messages.insert
-        text: '藍子かわいい'
+        text: name+'かわいい'
         x: Math.ceil(Math.random() * 120) - 10
         y: Math.ceil(Math.random() * 110) - 5
         size: Math.ceil(Math.random() * 29) * 10 + 10

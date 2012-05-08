@@ -12,12 +12,14 @@
  {{#each messages}}
   {{> message}}
  {{/each}}
- <div id=buttons>
-  <button id=add>押す</button>
+ <form>
+  <p><input name=name type=text size=6 value="藍子">かわいい</p>
+  <p><button id=add>押す</button></p>
   {{#if manyMessages}}
-  <br><button id=reset>全部消す</button>
+  <p><button type=button id=reset>全部消す</button></p>
   {{/if}}
- </div>
+  </div>
+ </form>
 </template>
 
 <template name="message">
